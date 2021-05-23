@@ -1,0 +1,47 @@
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-body">
+             <span class="h3">Liste des utilisateurs
+             <button class="btn btn-primary btn-lg" routerLink="/create">+</button>
+             </span>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search..." id="filter">
+  </div>
+
+
+<div class="table-responsive-sm">
+  <h4 style="margin-top:25px;"align="center" *ngIf="users.length == 0"> Aucun utilisateur à afficher </h4>
+<table *ngIf="users.length > 0" class="table mt-4 table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Pseudo</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Telephone</th>
+      <th scope="col">Role</th>
+      <th scope="col-2">Action</th>
+       <th></th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr class="text" *ngFor="let item of users">
+      <td>{{item.pseudo}}</td>
+      <td>{{item.nom}}</td>
+      <td>{{item.prenom}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.adresse}}</td>
+      <td>{{item.telephone}}</td>
+      <td>{{item.role}}</td>
+      <td><i title="Modifier cet utilisateur" class="fas fa-edit fa-lg text-info" [routerLink]="['/edith/', item.id]"></i></td>
+      <td><i title="Supprimer cet utilisateur" (click)="deleteUser(item.id)" class="far fa-trash-alt  text-danger"></i></td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    </div>
+  <button type="button" class="btn btn-primary mt-4">Voir l'archive</button>
+</div>
+</div>

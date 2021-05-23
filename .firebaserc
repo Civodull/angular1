@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-4fabc": {
+      "hosting": {
+        "gestionRoles": [
+          "angular-4fabc"
+        ]
+      }
+    }
+  }
+}

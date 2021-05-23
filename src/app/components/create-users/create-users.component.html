@@ -1,0 +1,61 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="col">
+                <button type="button" class="btn btn-outline-dark" routerLink="/admin"><i class="fas fa-window-close"></i></button>
+            </div>
+            <div class="card text-center">
+
+                <div class="card-body">
+                    <h3>{{titre}}</h3>
+                    <div *ngIf="Loading" class="spinner-border " role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <span *ngIf="submitted && creatUser.invalid" style="color:red">Tous les champs sont obligatoire</span>
+                    <form class="mt-4" [formGroup]="creatUser" (ngSubmit)="onCreateUser()">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" formControlName="nom" autocomplete="off" placeholder="Nom">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" formControlName="prenom" autocomplete="off" placeholder="Prénom">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" formControlName="pseudo" autocomplete="off" placeholder="Pseudo">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" formControlName="adresse" autocomplete="off" placeholder="Exemple Liberté 6">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <input type="email" class="form-control form-control-lg" formControlName="email" autocomplete="off" placeholder="exemple@exemple.com">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <input type="number" class="form-control form-control-lg" formControlName="telephone" autocomplete="off" placeholder="771642538">
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col">
+                                <h4 class="" align="center" color="grayscale">Role</h4>
+                            </div>
+                            <div class="col">
+                                <select class="form-select" aria-label="Disabled select example" class="form-control form-control-lg" formControlName="role">
+                            <option *ngFor="let rol of roles" value="{{rol.role}}" >{{rol.role}}</option>
+                        </select>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 mt-3">
+                            <button class="btn btn-primary" type="submit" [disabled]="creatUser.invalid">Valider</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

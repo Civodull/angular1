@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4 col-md-offset-5">
+        <div class="jumbotron">
+            <div class="jumb">
+                <a routerLink=""><img src="../../assets/img/user.png"></a>
+                <form autocomplete="off" id="formI">
+                    <h5 class="text-center">CONNEXION</h5>
+                    <h6 class="text">connectez-vous à votre compte</h6>
+                    <div class="form-group">
+                        <!-- <label for="email">compte google</label>-->
+                        <div id="google" class="g-signin2" data-onsuccess="onSignIn" data-longtitle="true"></div>
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="email">Email</label>-->
+                        <input type="email" name="email" formControlName="email" autocomplete="off" class="form-contro input-sm" placeholder="exemple@exemple.com" #email>
+                    </div>
+                    <div class="form-group">
+                        <!--  <label for="Password">Mot de passe</label>-->
+                        <input type="password" name="password" formControlName="password" autocomplete="off" class="form-contro input-sm" placeholder="Saisir le mot de passe ici" #password>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </form>
+                <a href="#">
+                    <h6 class="text-left"> Cliquez ici pour le réinitialiser le mot de passe.</h6>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+    </div>
+</div>
